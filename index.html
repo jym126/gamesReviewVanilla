@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GameReviewHub</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 <body>
 
@@ -36,7 +36,7 @@
 
         <!-- Card 1 -->
         <div class="card">
-          <img src="https://res.cloudinary.com/dmimages/image/upload/v1702508494/game-console-6603120_drkxyb.jpg" alt="Game Title">
+          <img src="images/game-console-6603120_drkxyb.webp" alt="Game Title">
           <div class="card-content">
             <h3>New Challenges in games industry</h3>
             <p>Embark on a digital odyssey where pixels dance with purpose, and every frame tells a story...</p>
@@ -46,7 +46,7 @@
 
         <!-- Card 2 -->
         <div class="card">
-          <img src="https://res.cloudinary.com/dmimages/image/upload/v1702508576/fortnite-4129124_1920_spddvh.jpg" alt="Game Title">
+          <img src="/images/fortnite-4129124_1920_spddvh.webp" alt="Game Title">
           <div class="card-content">
             <h3>The pixel revolution</h3>
             <p>Dive into a symphony of pixels and polygons, where gameplay isn't just a journey...</p>
@@ -56,7 +56,7 @@
 
         <!-- Card 3 -->
         <div class="card">
-          <img src="https://res.cloudinary.com/dmimages/image/upload/v1702508729/gamer-3163518_1920_ewwg4i.jpg" alt="Game Title">
+          <img src="images/gamer-3163518_1920_ewwg4i.webp" alt="Game Title">
           <div class="card-content">
             <h3>The future of consoles</h3>
             <p>Unlock the gateway to a digital universe where every pixel is a brushstroke of adventure...</p>
@@ -66,7 +66,7 @@
 
         <!-- Card 4 -->
         <div class="card">
-          <img src="https://res.cloudinary.com/dmimages/image/upload/v1702508689/video-games-893225_1920_ujuasp.jpg" alt="Game Title">
+          <img src="images/video-games-893225_1920_ujuasp.webp" alt="Game Title">
           <div class="card-content">
             <h3>Shorcuts for keypad functions</h3>
             <p>Step into the virtual realm, where innovation meets imagination...</p>
@@ -80,8 +80,9 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2023 GameReviewHub. All rights reserved.</p>
+    <p>&copy; <span id="current-year"></span> | GameReviewHub. All rights reserved.</p>
+    <p id="lastModified"></p>
   </footer>
-
+  <script src="/scripts/common.js"></script>
 </body>
 </html>
