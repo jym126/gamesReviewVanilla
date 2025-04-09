@@ -1,5 +1,4 @@
-const apiKey = "0f37c1fbe7294b1fa22d0a8742173d98";
-const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}`;
+import { apiUrl } from "/scripts/env.js";
 
 window.onload = async function () {
   const games = await fetchGames();
