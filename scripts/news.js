@@ -1,4 +1,4 @@
-import { apiUrl } from "./env.js";
+import { apiUrl } from "./env.js"; // Asegúrate que la ruta sea correcta según tu estructura
 
 window.onload = async function () {
   const games = await fetchGames();
@@ -23,15 +23,26 @@ function renderGames(games) {
   games.forEach(game => {
     const card = document.createElement("div");
     card.className = "card";
+
     card.innerHTML = `
       <img src="${game.background_image}" alt="${game.name}" />
       <div class="card-content">
         <h3>${game.name}</h3>
         <p>Rating: ${game.rating}</p>
-        <button onclick='addToFavorites(${JSON.stringify(game)})'>Add to Favorites</button>
+        <button class="add-fav-btn">Add to Favorites</button>
       </div>
     `;
+
+    // Evento para abrir el modal al hacer click en la tarjeta
     card.addEventListener("click", () => openModal(game));
+
+    // Evento para agregar a favoritos solo si se hace click en el botón
+    const button = card.querySelector(".add-fav-btn");
+    button.addEventListener("click", (e) => {
+      e.stopPropagation(); // evita que se dispare el evento del card
+      addToFavorites(game);
+    });
+
     container.appendChild(card);
   });
 }
@@ -72,7 +83,7 @@ function openModal(game) {
 
   modal.classList.remove("hidden");
 
-  // Prevent modal close when clicking inside content
+  // Prevenir cierre al hacer click dentro del modal
   document.querySelector("#modalContent").addEventListener("click", e => e.stopPropagation());
 }
 
@@ -80,6 +91,8 @@ function closeModal() {
   document.getElementById("gameModal").classList.add("hidden");
 }
 
+// Agregar función al window para que funcione desde el HTML
 window.closeModal = closeModal;
 
+// Cerrar modal al hacer click fuera del contenido
 document.getElementById("gameModal").addEventListener("click", closeModal);
