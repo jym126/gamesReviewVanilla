@@ -67,6 +67,7 @@ function openModal(game) {
     <p><strong>Rating:</strong> ${game.rating}</p>
     <p><strong>Released:</strong> ${game.released}</p>
     <p><strong>Genres:</strong> ${game.genres?.map(g => g.name).join(", ") || "N/A"}</p>
+    <p><strong>Features:</strong> ${game.tags?.map(d => d.name).join(", ") || "N/A"}</p>
   `;
 
   modal.classList.remove("hidden");
@@ -78,5 +79,7 @@ function openModal(game) {
 function closeModal() {
   document.getElementById("gameModal").classList.add("hidden");
 }
+
+window.closeModal = closeModal;
 
 document.getElementById("gameModal").addEventListener("click", closeModal);
