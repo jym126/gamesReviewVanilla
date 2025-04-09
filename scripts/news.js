@@ -1,4 +1,4 @@
-import { apiUrl } from "/scripts/env.js";
+import { apiUrl } from "./env.js";
 
 window.onload = async function () {
   const games = await fetchGames();
